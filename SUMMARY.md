@@ -6,4 +6,5 @@
         * [Properties](properties.md)
         * [SubShader](subshader.md)
             * [Pass](pass.md)
+    * [Surface Shader](surface-shader.md)
 
