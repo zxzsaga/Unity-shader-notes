@@ -1,6 +1,7 @@
 {
     "plugins": [
-        "theme-default"
+        "theme-default",
+        "maxiang"
     ],
     "pluginsConfig": {
         "theme-default": {
