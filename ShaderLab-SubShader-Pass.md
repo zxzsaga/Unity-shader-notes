@@ -6,6 +6,7 @@ Pass {
     [Name]
     [Tags]
     [RenderSetup]
+    [CGPROGRAM]
 }
 ```
 
