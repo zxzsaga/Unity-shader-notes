@@ -1,4 +1,4 @@
-Unity shader 跟渲染流水线的 shader 有很大不同。
+Unity shader 跟渲染流水线的 shader 有很大的不同。
 
 Unity 的 shader 能够以以下三种方式编写：
 - 作为 surface shaders
