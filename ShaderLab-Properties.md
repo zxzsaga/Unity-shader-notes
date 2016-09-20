@@ -21,11 +21,14 @@ Properties {
 `name` 一般以下划线开始。"defaulttexture" 要么是空字符串，要么是内建默认纹理："white", "black", "gray", "bump".
 
 每个 Property 需要在 CG 中有对应的变量，它们名称必须相同，类型有如下的对应关系：
-- Color, Vector: float4, half4, fixed4
-- Range, Float: float, half, fixed
-- 2D: sampler2D
-- Cube: samplerCube
-- 3D: sampler3D
+
+| ShaderLab 属性类型 | CG 变量类型 |
+| - | - |
+| Color, Vector | float4, half4, fixed4 |
+| Range, Float | float, half, fixed |
+| 2D | sampler2D |
+| Cube | samplerCube |
+| 3D | sampler3D |
 
 Property 还有这样一些属性：
 - [HideInInspector]: 在材质面板不显示该属性值
