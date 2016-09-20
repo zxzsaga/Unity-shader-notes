@@ -1,12 +1,15 @@
 {
     "plugins": [
-        "-theme-default",
-        "maxiang"
+        "theme-synapse"
     ],
     "pluginsConfig": {
         "theme-default": {
             "styles": "",
             "showLevel": true
+        },
+        "theme-synapse": {
+            "styles": "",
+            "showLevel": false
         }
     }
 }
