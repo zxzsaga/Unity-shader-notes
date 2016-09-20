@@ -3,9 +3,5 @@
         "maxiang"
     ],
     "pluginsConfig": {
-        "theme-default": {
-            "styles": "",
-            "showLevel": true
-        }
     }
 }
