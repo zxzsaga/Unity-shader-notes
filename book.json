@@ -1,0 +1,11 @@
+{
+    "plugins": [
+        "theme-default"
+    ],
+    "pluginsConfig": {
+        "theme-default": {
+            "styles": "",
+            "showLevel": true
+        }
+    }
+}
