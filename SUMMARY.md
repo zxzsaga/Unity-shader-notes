@@ -5,6 +5,7 @@
 * [ShaderLab](shaderlab.md)
     * [Properties](properties.md)
     * [SubShader](subshader.md)
+        * [Tags](tags.md)
         * [Pass](pass.md)
 * [Surface Shader](surface-shader.md)
 * [Unity Vertex and Fragment Shader](new.md)
