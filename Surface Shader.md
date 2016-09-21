@@ -1,10 +1,14 @@
 # Surface Shader
+
 编写与光照结合的 shader 很复杂。光照有不同的光照类型、阴影选项、渲染路径(forward and deferred rendering), shader 需要以某些方式处理这些和复杂性。
 
-Unity 的 Surface Shaders 是一种代码生成方法，使我们不用编写低层次的 vertex/pixel shader 程序。我们需要使用 Cg/HLSL 来编写。Surface Shader 是 Unity 自己创造的一种着色器代码类型，它在背后仍旧会转换成对应的顶点/片元着色器，是对顶点/片元着色器的更高一层抽象。
+Unity 的 surface shader 是一种代码生成方法，使我们不用编写低层次的 vertex/pixel shader 程序。我们需要使用 Cg/HLSL 来编写。Surface shader 是 Unity 自己创造的一种着色器代码类型，它在背后仍旧会转换成对应的顶点/片元着色器，是对顶点/片元着色器的更高一层抽象。
 
-## How it works
-定义一个 "surface function" 用 UV 图或其他数据作为输入，组成输出结构 **SurfaceOutput**. SurfaceOutput 描述表面属性（比如 albedo color, normal, emission, specularity 等等）。Surface Shader 编译后指出需要哪些输入、哪些输出被填充等等，生成实际的 vertex&pixel shader, 同时生成处理 forward 和 deferred 渲染的渲染路径。
+## 如何使用
+
+使用 `#pragma surface surfaceFunction lightModel [optionalparams]` 语法，定义一个 surface shader 函数，这个函数输出结构为 **SurfaceOutput**.
+
+SurfaceOutput 描述表面属性（比如 albedo color, normal, emission, specularity 等等）。Surface shader 编译后指出需要哪些输入、哪些输出被填充等等，生成实际的 vertex&pixel shader, 同时生成处理 forward 和 deferred 渲染的渲染路径。
 
 Surface shader 的标准输出结构长这样：
 ```
