@@ -1,4 +1,5 @@
 # Properties
+
 在 shader 里可以定义一系列参数，这些参数可以在 Unity 材质面板里进行设置。在 Properties 里可定义这些参数：
 
 ```
@@ -8,7 +9,15 @@ Properties {
 }
 ```
 
-每个 Property 有下面这些形式：
+Property 的格式为：
+
+```
+//  变量名    Inspector显示名称  变量类型     默认值
+_AmbientColor ("Ambient Color", Color) = (1, 1, 1, 1)
+```
+
+具体的有下面这些形式：
+
 - `name("display name", Range(min, max)) = number`
 - `name("display name", Float) = number`
 - `name("display name", Int) = number`
@@ -22,13 +31,15 @@ Properties {
 
 每个 Property 需要在 CG 中有对应的变量，它们名称必须相同，类型有如下的对应关系：
 
-| ShaderLab 属性类型 | CG 变量类型 |
-| - | - |
-| Color, Vector | float4, half4, fixed4 |
-| Range, Float | float, half, fixed |
-| 2D | sampler2D |
-| Cube | samplerCube |
-| 3D | sampler3D |
+| ShaderLab 属性类型 | CG 变量类型 | 功能 |
+| - | - | - |
+| Color | float4, half4, fixed4 | 色块，通过拾色器获取颜色 |
+| Vector | float4, half4, fixed4 | |
+| Range(min, max) | float, half, fixed | float 属性，以滑动条的形式调节 |
+| Float | float, half, fixed | 非滑动条的 float 属性 |
+| 2D | sampler2D | 2D 纹理。拖拽一个纹理 |
+| Cube | samplerCube | 立方贴图，拖拽立方贴图 |
+| 3D | sampler3D | 3D 纹理 |
 
 Property 还有这样一些属性：
 - [HideInInspector]: 在材质面板不显示该属性值
