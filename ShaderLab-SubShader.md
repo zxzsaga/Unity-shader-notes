@@ -1,5 +1,5 @@
 # SubShader
-每个 Unity Shader 文件至少要有一个 SubShader. Unity 要显示 mesh 时，就会去寻找要使用的 shader. 第一个被支持的 SubShader 将被选择使用，如果没有 shader 可用，Unity 会尝试使用 fallback shader.
+每个 Unity Shader 文件至少要有一个 SubShader. Unity 要显示 mesh 时，就会去寻找要使用的 shader. 第一个被支持的 SubShader 将被选择使用，如果没有 shader 可用，Unity 会尝试使用 Fallback shader.
 
 ```
 SubShader {
