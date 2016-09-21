@@ -12,11 +12,11 @@ Unity 的 surface shader 是一种代码生成方法，使我们不用编写低�
 #pragma surface surfaceFunction lightModel [optionalparams]
 ```
 
-语法，定义一个 surface shader 函数，这个函数输出结构为 **SurfaceOutput**.
+语法，定义一个 surface shader 函数，这个函数的输入结构需要自定义，但输出结构是内建的，其中之一为 SurfaceOutput.
 
 SurfaceOutput 描述表面属性（比如 albedo color, normal, emission, specularity 等等）。Surface shader 编译后指出需要哪些输入、哪些输出被填充等等，生成实际的 vertex&pixel shader, 同时生成处理 forward 和 deferred 渲染的渲染路径。
 
-Surface shader 的标准输出结构长这样：
+SurfaceOutput 的结构如下：
 
 ```
 struct SurfaceOutput {
@@ -29,7 +29,7 @@ struct SurfaceOutput {
 };
 ```
 
-Unity 5 里 surface shader 还可以用 physically based lighting models. 内建的 Standard 和 StardardSpecular 光照模型分别可以使用这些输出结构：
+Unity 5 里 surface shader 还可以用 physically based lighting models. 内建的 Standard 和 StardardSpecular 光照模型分别可以使用输出结构 SurfaceOutputStandard 和 SurfaceOutputStandardSpecular:
 
 ```
 struct SurfaceOutputStandard {
@@ -52,7 +52,7 @@ struct SurfaceOutputStandardSpecular {
 };
 ```
 
-## 编写Surface Shader
+## 编写 Surface Shader
 
 Surface shader 跟其他 shader 一样需要放在 CGPROGRAM..ENDCG 里。不同的是：
 
@@ -89,7 +89,7 @@ transparency 分为两种：
 启用 semitransparency 使得生成的 surface shader 代码包含 blending 命令；然而启用 alpha cutout 会基于给定变量，在生成 pixel shader 时 do a fragment discard.
 [TODO](http://docs.unity3d.com/Manual/SL-SurfaceShaders.html)
 
-## Surface Shader 输入结构
+### Surface Shader 输入结构
 输入结构 `Input` 通常包含所有 shader 需要的 texture coordinates. 这些 texture coordinates 的名字必须以 `uv` 开头，再加上 texture 名字（或者以 `uv2` 开头，使用 secend texture coordinate set）。
 
 其他可以放入 `Input` 的参数有：
