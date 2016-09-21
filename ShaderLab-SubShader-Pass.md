@@ -25,6 +25,7 @@ Pass 可以定义它的名字和任意数量的 tags, 用于与渲染引擎的 P
 tags 有：
 
 - LightMode: 定义该 Pass 在 Unity 的渲染流水线中的角色。
+    - 
 - PassFlags
 - RequireOptions: 用于指定当满足某些条件时才渲染该 Pass, 它的值是一个由空格分隔的字符串。目前 Unity 支持的选项有：SoftVegetation. 在后面的版本中，可能会增加更多的选项。
 

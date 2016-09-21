@@ -7,7 +7,7 @@
     * [SubShader & Fallback](ShaderLab-SubShader.md)
         * [Tags](ShaderLab-SubShader-Tags.md)
         * [Pass](ShaderLab-SubShader-Pass.md)
-        * [CGPROGRAM](ShaderLab-SubShader-Pass-CGPROGRAM.md)
+        * [CGPROGRAM](ShaderLab-SubShader-CGPROGRAM.md)
     * [Others](ShaderLab-others.md)
 * [Surface Shader](surface shader.md)
     * [Surface Shader-Examples](surface shader-examples.md)
