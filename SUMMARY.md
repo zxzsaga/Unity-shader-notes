@@ -10,5 +10,6 @@
             * [CGPROGRAM](ShaderLab-SubShader-Pass-CGPROGRAM.md)
     * [Others](ShaderLab-Others.md)
 * [Surface Shader](Surface Shader.md)
+    * [Surface Shader-Examples](surface-shader-examples.md)
 * [Vertex and Fragment Shader](Vertex and Fragment Shader.md)
 
