@@ -4,6 +4,8 @@
 
 Unity 的 surface shader 是一种代码生成方法，使我们不用编写低层次的 vertex/pixel shader 程序。我们需要使用 Cg/HLSL 来编写。Surface shader 是 Unity 自己创造的一种着色器代码类型，它在背后仍旧会转换成对应的顶点/片元着色器，是对顶点/片元着色器的更高一层抽象。
 
+Surface shader 编译后指出需要哪些输入、哪些输出被填充等等，生成实际的 vertex&pixel shader, 同时生成处理 forward 和 deferred 渲染的渲染路径。
+
 ## 如何使用
 
 Surface shader 跟其他 shader 一样，需要写在 CGPROGRAM..ENDCG 段里。不同的是：
@@ -45,7 +47,7 @@ surfaceFunction 的定义为：
 
 #### 输出结构
 
-SurfaceOutput 描述表面属性（比如 albedo color, normal, emission, specularity 等等）。Surface shader 编译后指出需要哪些输入、哪些输出被填充等等，生成实际的 vertex&pixel shader, 同时生成处理 forward 和 deferred 渲染的渲染路径。
+SurfaceOutput 描述表面属性（比如 albedo color, normal, emission, specularity 等等）。
 
 SurfaceOutput 的结构如下：
 
