@@ -1,4 +1,5 @@
 # Pass
+
 Pass 块渲染 GameObject 的几何体。
 
 ```
@@ -6,7 +7,6 @@ Pass {
     [Name]
     [Tags]
     [RenderSetup]
-    [CGPROGRAM]
 }
 ```
 
@@ -19,6 +19,7 @@ UsePass "MyShader/MYPASSNAME"
 Unity 内部会把所有 Pass 的名称转换成大写字母的表示。
 
 ## Name and tags
+
 Pass 可以定义它的名字和任意数量的 tags, 用于与渲染引擎的 Pass 通讯。
 
 tags 有：
@@ -33,7 +34,6 @@ tags 有：
 - GrabPass: 该 Pass 负责抓取屏幕并将结果存储到一张纹理中，以用于后续的 Pass 处理。
 
 ## Render state set-up
-
 
 Pass 设置图形硬件的多种状态，比如是否开启 alpha 混合、是否开启深度测试。有下面这些命令
 

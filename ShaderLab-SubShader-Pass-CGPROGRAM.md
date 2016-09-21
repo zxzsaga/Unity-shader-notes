@@ -1,4 +1,7 @@
 # CGPROGRAM
+
+CGPROGRAM 段有可能作为 surface shader 写在 SubShader 里，也有可能作为 vertex/pixel shader 写在 Pass 里。
+
 一段 CG 程序的例子是：
 
 ```
