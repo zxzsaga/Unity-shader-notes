@@ -1,12 +1,23 @@
 # Surface Shader
+
 编写与光照结合的 shader 很复杂。光照有不同的光照类型、阴影选项、渲染路径(forward and deferred rendering), shader 需要以某些方式处理这些和复杂性。
 
-Unity 的 Surface Shaders 是一种代码生成方法，使我们不用编写低层次的 vertex/pixel shader 程序。我们需要使用 Cg/HLSL 来编写。Surface Shader 是 Unity 自己创造的一种着色器代码类型，它在背后仍旧会转换成对应的顶点/片元着色器，是对顶点/片元着色器的更高一层抽象。
+Unity 的 surface shader 是一种代码生成方法，使我们不用编写低层次的 vertex/pixel shader 程序。我们需要使用 Cg/HLSL 来编写。Surface shader 是 Unity 自己创造的一种着色器代码类型，它在背后仍旧会转换成对应的顶点/片元着色器，是对顶点/片元着色器的更高一层抽象。
 
-## How it works
-定义一个 "surface function" 用 UV 图或其他数据作为输入，组成输出结构 **SurfaceOutput**. SurfaceOutput 描述表面属性（比如 albedo color, normal, emission, specularity 等等）。Surface Shader 编译后指出需要哪些输入、哪些输出被填充等等，生成实际的 vertex&pixel shader, 同时生成处理 forward 和 deferred 渲染的渲染路径。
+## 如何使用
 
-Surface shader 的标准输出结构长这样：
+使用
+
+```
+#pragma surface surfaceFunction lightModel [optionalparams]
+```
+
+语法，定义一个 surface shader 函数，这个函数的输入结构需要自定义，但输出结构是内建的，其中之一为 SurfaceOutput.
+
+SurfaceOutput 描述表面属性（比如 albedo color, normal, emission, specularity 等等）。Surface shader 编译后指出需要哪些输入、哪些输出被填充等等，生成实际的 vertex&pixel shader, 同时生成处理 forward 和 deferred 渲染的渲染路径。
+
+SurfaceOutput 的结构如下：
+
 ```
 struct SurfaceOutput {
     fixed3 Albedo;  // diffuse color
@@ -18,7 +29,8 @@ struct SurfaceOutput {
 };
 ```
 
-Unity 5 里 surface shader 还可以用 physically based lighting models. 内建的 Standard 和 StardardSpecular 光照模型分别可以使用这些输出结构：
+Unity 5 里 surface shader 还可以用 physically based lighting models. 内建的 Standard 和 StardardSpecular 光照模型分别可以使用输出结构 SurfaceOutputStandard 和 SurfaceOutputStandardSpecular:
+
 ```
 struct SurfaceOutputStandard {
     fixed3 Albedo;      // base (diffuse or specular) color
@@ -40,15 +52,28 @@ struct SurfaceOutputStandardSpecular {
 };
 ```
 
-## Surface Shader 编译准则
-Surface shader 跟其他 shader 一样需要放在 CGPROGRAM..ENDCG 里。不同的是：
-- 必须放在 SubShader 里，不能在 Pass 里，Surface Shader 自己会编译进多个 Pass 里。
-- 需要使用`#pragma surface ...`表明这是一个 Surface Shader.
+## 编写 Surface Shader
 
-语法是`#pragma surface surfaceFunction lightModel [optionalparams]`.
+Surface shader 跟其他 shader 一样需要放在 CGPROGRAM..ENDCG 里。不同的是：
+
+- Surface shader 必须放在 SubShader 里，不能在 Pass 里。Surface shader 自己会编译进多个 Pass 里。
+- 需要使用 
+  
+  ```
+  #pragma surface surfaceFunction lightModel [optionalparams]
+  ```
+  
+  语法，表明这是一个 Surface Shader.
 
 ### 必要参数
-- surfaceFunction 需要是这种定义：`void surf(Input IN, inout SurfaceOutput o)`, Input 是一个需要自己定义的结构，Input 需要包含所有 texture 坐标和额外 surface function 需要的变量。
+
+- surfaceFunction:
+
+  ```
+  void surf(Input IN, inout SurfaceOutput o)
+  ```
+
+  Input 是一个需要自己定义的结构，Input 需要包含所有 texture 坐标和额外 surface function 需要的变量。
 - lightModel: 内建的 lightModel 有 physically based Standard 和 StandardSpecular，简单的 non-physically based Lambert(diffuse) 和 BlinnPhong(specular).
     - Standard 光照模型使用 SurfaceOutputStandar 输出结构，匹配 Unity 的 Standard(metallic workflow) shader.
     - StandardSpecular 光照模型使用 SurfaceOutputStandardSpecular 输出结构，匹配 Unity 的 Standard(specular setup) shader.
@@ -64,7 +89,7 @@ transparency 分为两种：
 启用 semitransparency 使得生成的 surface shader 代码包含 blending 命令；然而启用 alpha cutout 会基于给定变量，在生成 pixel shader 时 do a fragment discard.
 [TODO](http://docs.unity3d.com/Manual/SL-SurfaceShaders.html)
 
-## Surface Shader 输入结构
+### Surface Shader 输入结构
 输入结构 `Input` 通常包含所有 shader 需要的 texture coordinates. 这些 texture coordinates 的名字必须以 `uv` 开头，再加上 texture 名字（或者以 `uv2` 开头，使用 secend texture coordinate set）。
 
 其他可以放入 `Input` 的参数有：
