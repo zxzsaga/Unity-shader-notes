@@ -2,7 +2,7 @@
 
 简单的例子，设置表面颜色为白色，使用内建的 Lambert 光照模型：
 
-```
+```glsl
 Shader "Example/Diffuse Simple" {
     SubShader {
         Tags { "RenderType" = "Opaque" }
@@ -22,7 +22,7 @@ Shader "Example/Diffuse Simple" {
 
 使用纹理:
 
-```
+```glsl
 Shader "Example/Diffuse Texture" {
     Properties {
         _MainTex("Texture", 2D) = "white" {}
@@ -42,7 +42,6 @@ Shader "Example/Diffuse Texture" {
     }
     Fallback "Diffuse"
 }
-
 ```
 
 添加法线贴图、添加边缘光、添加细节纹理、在屏幕空间添加细节纹理：

@@ -2,7 +2,7 @@
 
 Pass 块渲染 GameObject 的几何体。
 
-```
+```glsl
 Pass {
     [Name]
     [Tags]
@@ -12,7 +12,7 @@ Pass {
 
 可以使用 ShaderLab 的 UsePass 命令来使用其他 Unity Shader 中的 Pass:
 
-```
+```glsl
 UsePass "MyShader/MYPASSNAME"
 ```
 
@@ -48,7 +48,7 @@ Pass 设置图形硬件的多种状态，比如是否开启 alpha 混合、是�
 - Offset: `Offset OffsetFactor, OffsetUnits`
 - Blend:
 
-  ```
+  ```glsl
   Blend sourceBlendMode destBlendMode
   Blend sourceBlendMode destBlendMode, alphaSourceBlendMode alphaDestBlendNode
   BlendOp colorOp

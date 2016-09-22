@@ -4,7 +4,7 @@ CGPROGRAM 段有可能作为 surface shader 写在 SubShader 里，也有可能�
 
 一段 CG 程序的例子是：
 
-```
+```glsl
 CGPROGRAM
 
 #pragma vertex vert      // 指定顶点着色器
@@ -46,7 +46,7 @@ ENDCG
 
 如果在 SubShader 的 Properties 中定义了属性，在 CG 代码中需要定义一个与属性名称和类型都匹配的变量，这样才能使用：
 
-```
+```glsl
 Properties {
     _Color("Color Tint", Color) = (1.0, 1.0, 1.0, 1.0)
 }
@@ -59,13 +59,12 @@ SubShader {
         ENDCG
     }
 }
-
 ```
 
 ## Unity 提供的内置文件和变量
 CG 程序中可以使用 `#include` 包含 `.cginc` 类型的文件，以获得一些很有用的变量和函数。例如：
 
-```
+```glsl
 CGPROGRAM
 #include "UnityCG.cginc"
 ENDCG

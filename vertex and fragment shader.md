@@ -1,7 +1,8 @@
 如果要编写与光照交互的 shader, 请使用 surface shader.
 
 底层的 shader 程序使用 Cg 或者 HLSL 语言编写，写在 Pass 命令里。典型代码如下：
-```
+
+```glsl
 Pass {
     // ... the usual pass state setup ...
 
@@ -20,6 +21,7 @@ Pass {
 Cg/HLSL 代码写在 `CGPROGRAM` 和 `ENDCG` 之间。
 
 在代码开始处可以编译由 `#pragma` 语句设定的准则。这些准则指示编译哪些 shader 函数。
+
 - `#pragma vertex name`
 - `#pragma fragment name`
 - `#pragma geometry name`: DX10的几何着色器，自动开启 `#pragma target 4.0`
@@ -27,6 +29,7 @@ Cg/HLSL 代码写在 `CGPROGRAM` 和 `ENDCG` 之间。
 - `#pragma domain name`: DX11的 domain shader, 自动开启 `#pragma target 5.0`
 
 其他的还有：
+
 - `#pragma target name`
 - `#pragma only_renderers`
 - `#pragma exclude_renderers`
@@ -37,7 +40,9 @@ Cg/HLSL 代码写在 `CGPROGRAM` 和 `ENDCG` 之间。
 每段代码必须要包含一个 `#pragma vertex` 和一个 `#pragma fragment`
 
 ## Rendering platforms
+
 Unity 默认编译至所有的渲染平台，可以使用 `#pragma only_renderers` 和 `#pragma exclude_renderers` 来控制编译的渲染平台。支持的平台有这些：
+
 - d3d9
 - d3d11
 - glcore
@@ -53,9 +58,10 @@ Unity 默认编译至所有的渲染平台，可以使用 `#pragma only_renderer
 - wiiu
 
 ## Unity 提供的内置文件和变量
+
 包含文件可以这样：
 
-```
+```glsl
 CGPROGRAM
 // ...
 #include "UnityCG.cginc"

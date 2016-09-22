@@ -13,7 +13,7 @@ Surface shader 跟其他 shader 一样，需要写在 CGPROGRAM..ENDCG 段里。
 - Surface shader 写在 SubShader 里，不在 Pass 里。Surface shader 自己会编译进多个 Pass 里。
 - 需要使用
 
-  ```
+  ```glsl
   #pragma surface surfaceFunction lightModel [optionalparams]
   ```
 
@@ -23,7 +23,7 @@ Surface shader 跟其他 shader 一样，需要写在 CGPROGRAM..ENDCG 段里。
 
 surfaceFunction 的定义为：
 
-  ```
+  ```glsl
   void surf(Input IN, inout SurfaceOutput o)
   ```
 
@@ -51,7 +51,7 @@ SurfaceOutput 描述表面属性（比如 albedo color, normal, emission, specul
 
 SurfaceOutput 的结构如下：
 
-```
+```glsl
 struct SurfaceOutput {
     fixed3 Albedo;  // diffuse color
     fixed3 Normal;  // tangent space normal, if written
@@ -64,7 +64,7 @@ struct SurfaceOutput {
 
 Unity 5 里 surface shader 还可以用 physically based lighting models. 内建的 Standard 和 StardardSpecular 光照模型分别可以使用输出结构 SurfaceOutputStandard 和 SurfaceOutputStandardSpecular:
 
-```
+```glsl
 struct SurfaceOutputStandard {
     fixed3 Albedo;      // base (diffuse or specular) color
     fixed3 Normal;      // tangent space normal, if written

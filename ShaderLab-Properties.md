@@ -2,7 +2,7 @@
 
 在 shader 里可以定义一系列参数，这些参数可以在 Unity 材质面板里进行设置。在 Properties 里可定义这些参数：
 
-```
+```glsl
 Properties {
     Property
     [Property ...]
@@ -11,7 +11,7 @@ Properties {
 
 Property 的格式为：
 
-```
+```glsl
 //  变量名    Inspector显示名称  变量类型     默认值
 _AmbientColor ("Ambient Color", Color) = (1, 1, 1, 1)
 ```

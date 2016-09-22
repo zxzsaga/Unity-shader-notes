@@ -3,7 +3,7 @@ Unity 的 shader 文件使用一种名为 ShaderLab 的声明式语言编写。�
 
 "Shader" 是 shader 文件的根命令，每个 shader 文件必须定义一个 "Shader".
 
-```
+```glsl
 Shader "name" {
     [Properties]
     SubShader
@@ -15,7 +15,7 @@ Shader "name" {
 
 一个典型的例子如下：
 
-```
+```glsl
 Shader "MyShaderName" {
     Properties {
         // 属性
