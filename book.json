@@ -1,10 +1,14 @@
 {
     "plugins": [
-        "theme-synapse"
+        "prism",
+        "-highlight",
+        "image-captions"
     ],
     "pluginsConfig": {
-        "theme-synapse": {
-            "showLevel": false
+        "prism": {
+            "css": [
+                "prismjs/themes/prism.css"
+            ]
         }
     }
 }
