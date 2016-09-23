@@ -45,5 +45,3 @@ Shader "MyShaderName" {
     Fallback "VertexLit"
 }
 ```
-
-其中最重要的部分是 SubShader 里的 Pass 块，绝大部分代码都是写在这个块里的。
