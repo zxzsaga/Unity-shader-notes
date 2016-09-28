@@ -4,6 +4,7 @@
 * [Overview](overview.md)
 * [ShaderLab](ShaderLab.md)
     * [Properties](ShaderLab-Properties.md)
+    * [CGINCLUDE](ShaderLab-CGINCLUDE.md)
     * [SubShader & Fallback](ShaderLab-SubShader.md)
         * [Tags](ShaderLab-SubShader-Tags.md)
         * [Pass](ShaderLab-SubShader-Pass.md)
