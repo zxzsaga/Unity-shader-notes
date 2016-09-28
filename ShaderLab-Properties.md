@@ -50,3 +50,11 @@ Property 还有这样一些属性：
 - [PerRendererData]
 
 以后再做了解。
+
+Property 前面还可以加上 Enum 参数，以在 inspector 面板中显示单选下拉框，例如：
+
+```glsl
+[Enum(Metallic Alpha,0,Albedo Alpha,1)] _SmoothnessTextureChannel ("Smoothness texture channel", Float) = 0 
+```
+
+这样 inspector 里的 Smoothness texture channel 就会是由 Metallic Alpha 和 Albedo Alpha 两项组成的单选下拉框，分别表示0和1。
