@@ -46,7 +46,7 @@ Property 还有这样一些属性：
 - [NoScaleOffset]: 在材质面板不显示纹理的 tiling 和 offset 属性
 - [Normal]: 指示纹理需要一张法线贴图
 - [HDR]: 指示纹理需要一张 HDR 纹理
-- [Gamma]
+- [Gamma]: 指示 float/vector 属性是一个 sRGB 值
 - [PerRendererData]
 
 以后再做了解。
