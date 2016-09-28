@@ -6,6 +6,7 @@ Unity 的 shader 文件使用一种名为 ShaderLab 的声明式语言编写。�
 ```glsl
 Shader "name" {
     [Properties]
+    [CGINCLUDE]
     SubShader
     [SubShader ...]
     [Fallback]
