@@ -4,7 +4,7 @@
 ```glsl
 SubShader {
     [Tags]
-    [CommonState(RendeSetup)]
+    [CommonState(RenderSetup)]
     Pass
     [Pass ...]
 }

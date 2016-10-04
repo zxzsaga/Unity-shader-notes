@@ -72,3 +72,4 @@ Pass 设置图形硬件的多种状态，比如是否开启 alpha 混合、是�
     - OneMinusDstAlpha
 
 - ColorMask
+- LOD
