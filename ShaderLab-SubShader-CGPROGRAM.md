@@ -1,6 +1,6 @@
 # CGPROGRAM
 
-CGPROGRAM 段有可能作为 surface shader 写在 SubShader 里，也有可能作为 vertex/pixel shader 写在 Pass 里。
+CGPROGRAM 段有可能作为 surface shader 写在 SubShader 里，也有可能作为 vertex\/pixel shader 写在 Pass 里。
 
 一段 CG 程序的例子是：
 
@@ -62,6 +62,7 @@ SubShader {
 ```
 
 ## Unity 提供的内置文件和变量
+
 CG 程序中可以使用 `#include` 包含 `.cginc` 类型的文件，以获得一些很有用的变量和函数。例如：
 
 ```glsl
@@ -71,18 +72,39 @@ ENDCG
 ```
 
 Unity 的内置着色器分布在这些文件夹下：
-- CGIncludes: 内置包含文件
-- DefaultResources: 内置组件或功能所需要的 Unity Shader, 例如一些 GUI 元素使用的 Shader
-- DefaultResourcesExtra: 内置 Unity Shader
-- Editor
+
+* CGIncludes: 内置包含文件
+* DefaultResources: 内置组件或功能所需要的 Unity Shader, 例如一些 GUI 元素使用的 Shader
+* DefaultResourcesExtra: 内置 Unity Shader
+* Editor
 
 常用的包含文件有：
 
 | 文件名 | 描述 |
-| - | - |
+| --- | --- |
 | UnityCG.cginc | 包含了最常使用的帮助函数、宏和结构体等 |
-| UnityShaderVariables.cginc | 在编译 Unity Shader 时，会被自动包含进来。包含了许多内置的全局变量，如 UNITY_MATRIX_MVP 等 |
+| UnityShaderVariables.cginc | 在编译 Unity Shader 时，会被自动包含进来。包含了许多内置的全局变量，如 UNITY\_MATRIX\_MVP 等 |
 | Lighting.cginc | 包含了各种内置的光照模型，如果编写的是 Surface Shader 的话，会自动包含进来 |
 | HLSLSupport.cginc | 在编译 Unity Shader 时，会被自动包含进来。声明了很多用于跨平台编译的宏和命令 |
 
-TODO: P108
+UnityCG.cginc 里常用的结构体有：
+
+| 名称 | 描述 | 包含的变量 |
+| --- | --- | --- |
+| appdata_base | 可用于顶点着色器的输入 | 顶点位置、顶点法线、第一组纹理坐标 |
+| appdata_tan | 可用于顶点着色器的输入 | 顶点位置、顶点切线、顶点法线、第一组纹理坐标 |
+| appdata_full | 可用于顶点着色器的输入 | 顶点位置、顶点切线、顶点法线、四组（或更多）纹理坐标 |
+| appdata_img | 可用于顶点着色器的输入 | 顶点位置、第一组纹理坐标 |
+| v2f_img | 可用于顶点着色器的输出 | 裁剪空间中的位置、纹理坐标 |
+
+UnityCG.cginc 里常用的帮助函数有：
+
+| 函数名 | 描述 |
+| --- | --- |
+| float3 WolrdSpaceViewDir(float4 v) |  |
+| float3 ObjSpaceViewDir(float4 v) |  |
+| float3 WorldSpaceLightDir(float4 v) |  |
+| float3 ObjSpaceLightDir(float4 v) |  |
+| float3 UnityObjectToWorldNormal(float3 norm) |  |
+| float3 UnityObjectToWolrdDir(in float3 dir) |  |
+| float3 UnityWorldToObjectDir(float3 dir) |  |
