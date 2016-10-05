@@ -7,6 +7,7 @@
     * [CGINCLUDE](ShaderLab-CGINCLUDE.md)
     * [SubShader & Fallback](ShaderLab-SubShader.md)
         * [Tags](ShaderLab-SubShader-Tags.md)
+        * [LOD](ShaderLab-SubShader-LOD.md)
         * [Pass](ShaderLab-SubShader-Pass.md)
         * [CGPROGRAM](ShaderLab-SubShader-CGPROGRAM.md)
     * [Others](ShaderLab-others.md)
