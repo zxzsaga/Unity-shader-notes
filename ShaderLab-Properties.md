@@ -49,8 +49,6 @@ Property 还有这样一些属性：
 - [Gamma]: 指示 float/vector 属性是一个 sRGB 值
 - [PerRendererData]
 
-以后再做了解。
-
 Property 前面还可以加上 `[Enum]` 参数，以在 inspector 面板中显示单选下拉框，例如：
 
 ```glsl
