@@ -49,8 +49,6 @@ Property 还有这样一些属性：
 - [Gamma]: 指示 float/vector 属性是一个 sRGB 值
 - [PerRendererData]
 
-以后再做了解。
-
 Property 前面还可以加上 `[Enum]` 参数，以在 inspector 面板中显示单选下拉框，例如：
 
 ```glsl
@@ -58,6 +56,14 @@ Property 前面还可以加上 `[Enum]` 参数，以在 inspector 面板中显�
 ```
 
 这样 inspector 里的 Smoothness texture channel 就会是由 Metallic Alpha 和 Albedo Alpha 两项组成的单选下拉框，分别表示0和1。
+
+Unity 5 里新增了 `[KeywordEnum]` 参数，也用于在面板中显示单选下拉框，但用法有所区别：
+
+```glsl
+[KeywordEnum(None, Add, Multiply, Screen)] _BlendMode ("Blend Mode", Float) = 0
+```
+
+KeywordEnum 参数不用像 Enum 那样成对写，值为从0开始的连续整数。Enum 最多支持7对值，而 KeywordEnum 最多支持9个值。
 
 加上 `[ToggleOff]` 参数，以在 inspector 面板中显示复选框，例如：
 
