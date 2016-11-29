@@ -97,7 +97,7 @@ UnityCG.cginc 里常用的结构体有：
 | appdata_img | 可用于顶点着色器的输入 | 顶点位置、第一组纹理坐标 |
 | v2f_img | 可用于顶点着色器的输出 | 裁剪空间中的位置、纹理坐标 |
 
-UnityCG.cginc 里常用的帮助函数有：
+UnityCG.cginc 里常用的帮助函数有（P108）：
 
 | 函数名 | 描述 |
 | --- | --- |
@@ -108,3 +108,7 @@ UnityCG.cginc 里常用的帮助函数有：
 | float3 UnityObjectToWorldNormal(float3 norm) |  |
 | float3 UnityObjectToWolrdDir(in float3 dir) |  |
 | float3 UnityWorldToObjectDir(float3 dir) |  |
+
+## Unity 提供的 CG/HLSL 语义
+
+P110

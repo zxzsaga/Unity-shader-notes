@@ -41,6 +41,8 @@ _AmbientColor ("Ambient Color", Color) = (1, 1, 1, 1)
 | Cube | samplerCube | 立方贴图，拖拽立方贴图 |
 | 3D | sampler3D | 3D 纹理 |
 
+2D 纹理属性还需要以 `纹理名_ST` 的方式声明一个 float4 类型的变量，xy 存储的是缩放值，zw 存储的是偏移值。
+
 Property 还有这样一些属性：
 - [HideInInspector]: 在材质面板不显示该属性值
 - [NoScaleOffset]: 在材质面板不显示纹理的 tiling 和 offset 属性

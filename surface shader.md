@@ -89,9 +89,9 @@ struct SurfaceOutputStandardSpecular {
 };
 ```
 
-### lightModel
+### 光照模型
 
-lightModel: 内建的 lightModel 有 physically based Standard 和 StandardSpecular，简单的 non-physically based Lambert(diffuse) 和 BlinnPhong(specular).
+内建的 lightModel 有 physically based Standard 和 StandardSpecular，以及简单的 non-physically based Lambert(diffuse) 和 BlinnPhong(specular).
 - Standard 光照模型使用 SurfaceOutputStandar 输出结构，匹配 Unity 的 Standard(metallic workflow) shader.
 - StandardSpecular 光照模型使用 SurfaceOutputStandardSpecular 输出结构，匹配 Unity 的 Standard(specular setup) shader.
 - Lambert 和 BlinnPhong 光照模型不是 physically based, 但在低端硬件上渲染更快。
