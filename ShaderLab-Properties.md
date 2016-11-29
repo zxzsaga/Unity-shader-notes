@@ -62,7 +62,7 @@ Property 前面还可以加上 `[Enum]` 参数，以在 inspector 面板中显�
 Unity 5 里新增了 `[KeywordEnum]` 参数，也用于在面板中显示单选下拉框，但用法有所区别：
 
 ```glsl
-[KeywordEnum(None, Add, Multiply, Screen)] _BlendMode ("Blend Mode", Float) = 0
+[KeywordEnum(None, Add, Multiply, Screen)] _BlendMode ("Blend Mode", Int) = 0
 ```
 
 KeywordEnum 参数不用像 Enum 那样成对写，值为从0开始的连续整数。Enum 最多支持7对值，而 KeywordEnum 最多支持9个值。
