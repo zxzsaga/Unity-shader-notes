@@ -108,6 +108,7 @@ UnityCG.cginc 里常用的帮助函数有（P108）：
 | float3 UnityObjectToWorldNormal(float3 norm) |  |
 | float3 UnityObjectToWolrdDir(in float3 dir) |  |
 | float3 UnityWorldToObjectDir(float3 dir) |  |
+| float4 UnityObjectToClipPos(float3 pos) |  |
 
 ## Unity 提供的 CG/HLSL 语义
 
