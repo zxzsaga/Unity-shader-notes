@@ -87,15 +87,30 @@ Unity 的内置着色器分布在这些文件夹下：
 | Lighting.cginc | 包含了各种内置的光照模型，如果编写的是 Surface Shader 的话，会自动包含进来 |
 | HLSLSupport.cginc | 在编译 Unity Shader 时，会被自动包含进来。声明了很多用于跨平台编译的宏和命令 |
 
-UnityCG.cginc 里常用的结构体有：
+UnityCG.cginc(2017.1.0f3)里常用的结构体，用于顶点着色器的有：
 
-| 名称 | 描述 | 包含的变量 |
-| --- | --- | --- |
-| appdata_base | 可用于顶点着色器的输入 | 顶点位置、顶点法线、第一组纹理坐标 |
-| appdata_tan | 可用于顶点着色器的输入 | 顶点位置、顶点切线、顶点法线、第一组纹理坐标 |
-| appdata_full | 可用于顶点着色器的输入 | 顶点位置、顶点切线、顶点法线、四组（或更多）纹理坐标 |
-| appdata_img | 可用于顶点着色器的输入 | 顶点位置、第一组纹理坐标 |
-| v2f_img | 可用于顶点着色器的输出 | 裁剪空间中的位置、纹理坐标 |
+- `appdata_base`
+    - `float4 vertex`
+    - `float3 normal`
+    - `float4 texcoord`
+- `appdata_tan`
+    - `float4 vertex`
+    - `float4 tangent`: 顶点切线
+    - `float3 normal`
+    - `float4 texcoord`
+- `appdata_full`
+    - `float4 vertex`
+    - `float4 tangent`
+    - `float3 normal`
+    - `float4 texcoord`
+    - `float4 texcoord1`
+    - `float4 texcoord2`
+    - `float4 texcoord3`
+    - `fixed4 color`
+- `appdata_img`
+    - `float4 vertex`
+    - `half2 texcoord`
+- | `v2f_img` | 可用于顶点着色器的输出 | 裁剪空间中的位置、纹理坐标 |
 
 UnityCG.cginc 里常用的帮助函数有（P108）：
 
