@@ -108,9 +108,11 @@ UnityCG.cginc(2017.1.0f3)里常用的结构体，用于顶点着色器的有：
     - `float4 texcoord3`
     - `fixed4 color`
 - `appdata_img`
-    - `float4 vertex`
-    - `half2 texcoord`
-- | `v2f_img` | 可用于顶点着色器的输出 | 裁剪空间中的位置、纹理坐标 |
+    - `float4 vertex : POSITION`
+    - `half2 texcoord : TEXCOORD0`
+- `v2f_img`
+    - `float4 pos : SV_POSITION`: 裁剪空间的位置
+    - `half2 uv : TEXCOORD0`
 
 UnityCG.cginc 里常用的帮助函数有（P108）：
 
