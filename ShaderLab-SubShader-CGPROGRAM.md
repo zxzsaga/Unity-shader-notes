@@ -90,23 +90,23 @@ Unity 的内置着色器分布在这些文件夹下：
 UnityCG.cginc(2017.1.0f3)里常用的结构体，用于顶点着色器的有：
 
 - `appdata_base`
-    - `float4 vertex : POSITION`
-    - `float3 normal : NORMAL`
-    - `float4 texcoord : TEXCOORD0`
+    - `float4 vertex`
+    - `float3 normal`
+    - `float4 texcoord`
 - `appdata_tan`
-    - `float4 vertex : POSITION`
-    - `float4 tangent : TANGENT`: 顶点切线
-    - `float3 normal : NORMAL`
-    - `float4 texcoord : TEXCOORD0`
+    - `float4 vertex`
+    - `float4 tangent`: 顶点切线
+    - `float3 normal`
+    - `float4 texcoord`
 - `appdata_full`
-    - `float4 vertex : POSITION`
-    - `float4 tangent : TANGENT`
-    - `float3 normal : NORMAL`
-    - `float4 texcoord : TEXCOORD0`
-    - `float4 texcoord1 : TEXCOORD1`
-    - `float4 texcoord2 : TEXCOORD2`
-    - `float4 texcoord3 : TEXCOORD3`
-    - `fixed4 color : COLOR`
+    - `float4 vertex`
+    - `float4 tangent`
+    - `float3 normal`
+    - `float4 texcoord`
+    - `float4 texcoord1`
+    - `float4 texcoord2`
+    - `float4 texcoord3`
+    - `fixed4 color`
 - `appdata_img`
     - `float4 vertex : POSITION`
     - `half2 texcoord : TEXCOORD0`
