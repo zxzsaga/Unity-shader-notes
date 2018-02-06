@@ -71,6 +71,15 @@ CGPROGRAM
 ENDCG
 ```
 
+Unity 默认已经包含的文件有：
+
+* `HLSLSupport.cginc`
+* `UnityShaderVariables.cginc`
+* `UnityCG.cginc`
+* `AutoLight.cginc`
+* `Lighting.cginc`
+* `TerrainEngine.cginc`
+
 Unity 的内置着色器分布在这些文件夹下：
 
 * CGIncludes: 内置包含文件
