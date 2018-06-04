@@ -61,6 +61,12 @@ SubShader {
 }
 ```
 
+## pragma
+
+```
+#pragma multi_compile_fog 此指令表示，编译出几个不同的Shader变体来处理不同类型的雾效(关闭/线性/指数/二阶指数)（off/linear/exp/exp2)
+```
+
 ## Unity 提供的内置文件和变量
 
 CG 程序中可以使用 `#include` 包含 `.cginc` 类型的文件，以获得一些很有用的变量和函数。例如：
