@@ -30,7 +30,7 @@
     - OneMinusSrcAlpha
     - OneMinusDstColor
     - OneMinusDstAlpha
-- ColorMask
+- ColorMask: ColorMask可以让我们制定渲染结果的输出通道，而不是通常情况下的RGBA这4个通道全部写入。可选参数是 RGBA 的任意组合以及 0， 这将意味着不会写入到任何通道，可以用来单独做一次Z测试，而不将结果写入颜色通道。
 
 ## LOD
 在Unity的Quality Settings中我们可以设定允许的最大LOD，当设定的LOD小于SubShader所指定的LOD时，这个SubShader将不可用。
